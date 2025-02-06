@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5A2D0C;
+    color: white;
+    padding: 10px 20px;
+}
+
+.branding h1 {
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+    font-weight: 700; /* Use bold weight for emphasis */
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-image img {
+    max-width: 100%;
+    max-height: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.welcome-text {
+    text-align: center; /* Center the text horizontally */
+    font-family: 'Cinzel', serif; /* Elegant serif font */
+    font-size: 40px; /* Larger font size for prominence */
+    font-weight: 700; /* Bold styling for impact */
+    margin: 60px 0 30px; /* Adds space above and below the text */
+    color: #013d02; /* Matches branding colors */
+    letter-spacing: 2px; /* Adds spacing between letters for a sophisticated look */
+}
+
+/* Optional: Add more empty space below the image */
+.header-image {
+    padding-bottom: 30px; /* Creates space below the image */
+}
+
+.hero {
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    color: rgb(7, 0, 0);
+    text-align: center;
+   
+    
+}
+.hero-image {
+    width: 30%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensures the image is displayed as a block */
+    margin: 100px auto; /* Centers the image horizontally with space above and below */
+}
+
+
+.products {
+    padding: 40px 20px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold; /* Makes the text bold */
+    margin-bottom: 20px; /* Adds padding (space) below the heading */
+    
+    
+}
+
+.product p {
+    font-family: 'Roboto', sans-serif; /* A clean and modern font */
+    font-weight: normal;
+    color: #777; /* A softer gray color for the description */
+    line-height: 1.6; /* Increases line spacing for better readability */
+    font-size: 1rem; /* Slightly smaller font for description */
+    max-width: 90%; /* Limits the width of the description */
+    margin: 10px auto; /* Centers the text and adds space */
+}
+.product:hover p {
+    color: #333; /* Change the text color on hover */
+    transform: scale(1.05); /* Slight zoom effect for better engagement */
+    transition: all 0.3s ease-in-out; /* Smooth transition for effects */
+}
+
+
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between product items */
+}
+
+.product {
+    width: calc(33% - 20px); /* Ensures 3 products per row */
+    margin: 10px;
+    box-sizing: border-box; /* Includes padding and border in width/height */
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: 50;
+    padding-bottom: 10%; /* Ensures square aspect ratio */
+    object-fit: cover; /* Ensures the image fills the square without distortion */
+    display: block;
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    overflow: hidden;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
