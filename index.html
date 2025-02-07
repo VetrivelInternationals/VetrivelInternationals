@@ -101,7 +101,8 @@
     
     <section id="order-form" class="order-form">
         <h2>Place Your Order</h2>
-        <form action="submit_order.php" method="POST">
+        <form name="order-form" method="POST" data-netlify="true">
+
             <input type="text" name="company_name" placeholder="Company Name" required>
             <input type="text" name="ie_code" placeholder="IE Code" required>
             <input type="text" name="address" placeholder="Company Address" required>
