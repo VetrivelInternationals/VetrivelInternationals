@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - VETRIVEL INTERNATIONALS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleDescription(id) {
+            var desc = document.getElementById(id);
+            if (desc.style.display === "none") {
+                desc.style.display = "block";
+            } else {
+                desc.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="branding">
+            <h1>VETRIVEL INTERNATIONALS</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="products">
+        <h2>Our Products</h2>
+        <p>We specialize in exporting premium palm tree sweet products. Below are some of our featured products:</p>
+        
+        <div class="product-grid">
+            <div class="product">
+                <img src="jaggery.jpg" alt="Jaggery Powder">
+                <h3>Jaggery Powder</h3>
+                <button onclick="toggleDescription('desc1')">View Details</button>
+                <p id="desc1" style="display:none;">Our Jaggery Powder is a 100% natural and unrefined sweetener made from high-quality palm sap. It is an excellent alternative to refined sugar, packed with essential nutrients like iron, calcium, and magnesium.</p>
+            </div>
+            <div class="product">
+                <img src="palm tree sugar.jpg" alt="Palm Sugar Candy">
+                <h3>Palm Sugar Candy</h3>
+                <button onclick="toggleDescription('desc2')">View Details</button>
+                <p id="desc2" style="display:none;">Our Palm Sugar Candy is a delicious, all-natural sweet treat made from the sap of palm trees. It offers a rich caramel flavor and is packed with essential minerals like iron, magnesium, and potassium.</p>
+            </div>
+            <div class="product">
+                <img src="karupatti.jpg" alt="Palm Jaggery">
+                <h3>Palm Jaggery</h3>
+                <button onclick="toggleDescription('desc3')">View Details</button>
+                <p id="desc3" style="display:none;">Our Palm Jaggery is a premium, unrefined sugar derived from the sap of palm trees, offering a natural and wholesome alternative to processed sugar. It is rich in iron, calcium, and antioxidants.</p>
+            </div>
+            <div class="product">
+                <img src="dry ginger palm.jpg" alt="Dry Ginger Palm Candy">
+                <h3>Dry Ginger Palm Candy</h3>
+                <button onclick="toggleDescription('desc4')">View Details</button>
+                <p id="desc4" style="display:none;">Our Dry Ginger Palm Candy is a blend of the aromatic zing of ginger and the natural sweetness of palm sugar. It is perfect for digestion, immunity boosting, and serves as a wholesome, healthful treat.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2025 VETRIVEL INTERNATIONALS. All rights reserved.</p>
+    </footer>
+</body>
+</html>
