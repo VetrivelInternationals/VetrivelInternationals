@@ -1,147 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - VETRIVEL INTERNATIONALS</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
-      color: #222;
-    }
-
-    header {
-      background-color: #006400;
-      color: white;
-      padding: 20px;
-    }
-
-    header h1 {
-      margin: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin-top: 10px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .about {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      padding: 40px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      border-radius: 12px;
-    }
-
-    .about h2 {
-      font-size: 32px;
-      color: #006400;
-      margin-bottom: 10px;
-    }
-
-    .about h3 {
-      margin-top: 30px;
-      font-size: 24px;
-      color: #444;
-    }
-
-    .about p {
-      line-height: 1.8;
-      font-size: 16px;
-    }
-
-    .about ul {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
-
-    .about ul li {
-      margin-bottom: 8px;
-      font-size: 16px;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      .about {
-        padding: 20px;
-        margin: 20px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us - VETRIVEL INTERNATIONALS</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
- <header style="background-color: #005400; padding: 10px 40px;">
-  <div style="display: flex; align-items: center; justify-content: space-between;">
-    
-    <!-- Logo and Branding (aligned left) -->
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="Logo.New.jpg" alt="Vetrivel Logo" style="height: 60px; border-radius: 10px;" />
-      <h1 style="margin: 0; font-size: 26px; font-weight: bold; color: white;">VETRIVEL INTERNATIONALS</h1>
+
+    <header class="site-header">
+        <div class="yellow-section">
+            <div class="scrolling-content-wrapper">
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <!-- HAMBURGER ICON: Moved here to be a direct child of main-nav -->
+            <!-- This placement ensures flexbox 'order' and 'justify-content' work correctly -->
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+            <div class="left-icons">
+                <!-- Add any left-aligned icons here if needed, e.g., social media icons -->
+            </div>
+
+            <div class="center-logo">
+                <a href="index.html">
+                    <img src="Logo.New.jpg" alt="Vetrivel Internationals Logo" />
+                </a>
+            </div>
+
+            <!-- NAVIGATION LINKS: This div contains the actual menu items -->
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="about-container">
+        <h2>About Us</h2>
+        <p><strong>Vetrivel Internationals</strong> is a trusted name in the export industry, specializing in high-quality palm tree sweet products. We take pride in offering a variety of natural and unrefined sweeteners sourced from the best suppliers, ensuring quality and authenticity in every shipment.</p>
+        
+        <h3>Who We Are</h3>
+        <p>We are a dedicated export company with a strong focus on delivering premium palm-based sweet products to global markets. While we are not manufacturers, we work closely with reliable and certified producers to bring you the finest products available.</p>
+        
+        <h3>What We Offer</h3>
+        <p>Our primary expertise lies in exporting palm tree sweet products such as Jaggery Powder, Palm Sugar Candy, Palm Jaggery, and Dry Ginger Palm Candy. We also cater to custom export needs, ensuring timely delivery through a strong and efficient supply chain.</p>
+        
+        <h3>Why Choose Us?</h3>
+        <ul>
+            <li>Reliable sourcing from trusted manufacturers</li>
+            <li>Premium quality with strict quality control</li>
+            <li>Customized exports based on customer needs</li>
+            <li>Commitment to global standards and satisfaction</li>
+        </ul>
+        
+        <h3>Our Mission</h3>
+        <p>Our mission is to bridge the gap between high-quality traditional sweet products and global markets, ensuring authenticity, sustainability, and customer satisfaction.</p>
     </div>
 
-    <!-- Navigation Menu (aligned right) -->
-    <nav>
-      <ul style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0;">
-        <li><a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Home</a></li>
-        <li><a href="index.html#products" style="color: white; text-decoration: none; font-weight: bold;">Products</a></li>
-        <li><a href="about.html" style="color: white; text-decoration: none; font-weight: bold;">About Us</a></li>
-        <li><a href="contact.html" style="color: white; text-decoration: none; font-weight: bold;">Contact</a></li>
-      </ul>
-    </nav>
+    <section id="blog" style="padding: 60px 20px; background-color: #f9f9f9;">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 40px;">Our Featured Products – Blog</h2>
 
+    <div class="blog-grid">
+      <div class="blog-post">
+        <h3>Indian Coconuts – Naturally the Best</h3>
+        <p>We export premium-grade coconuts known for their high oil content, freshness, and longer shelf life. Ideal for both edible and industrial uses.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>Palm Jaggery – A Healthy Natural Sweetener</h3>
+        <p>Discover the health benefits of palm jaggery, a chemical-free alternative to sugar. Available in powder, solid, and sachet forms.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>Banana Powder – Nutrition Packed Export</h3>
+        <p>Banana powder is widely used in health foods, baby foods, and bakery items. We supply high-quality powder with great shelf life.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>Beetroot Powder – Natural Color & Nutrition</h3>
+        <p>Used for health supplements and natural food coloring, our beetroot powder is 100% pure and export-quality.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>Carrot Powder – Bright & Healthy</h3>
+        <p>Carrot powder is a great source of Vitamin A and is used in soups, baby foods, and dry mixes. We deliver bulk quantities.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>Cucumber Powder – Cool & Versatile</h3>
+        <p>Cucumber powder is ideal for cosmetic and food applications. We offer dehydrated powder free from additives.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>Onion Powder – Essential Kitchen Export</h3>
+        <p>Export-quality onion powder that enhances flavor and aroma in global cuisines. Pure, strong, and consistent.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>Pomegranate Powder – Rich in Antioxidants</h3>
+        <p>A highly demanded superfood powder with excellent export value. Our powder retains nutrients and taste effectively.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>Indian Spices – Global Taste Makers</h3>
+        <p>We source premium turmeric, cardamom, black pepper, and more from trusted farms in India. Guaranteed purity and aroma.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+        <h3>Frozen Chicken – Halal & Freshly Processed</h3>
+        <p>We provide hygienically packed, frozen halal chicken, adhering to all international export standards.</p>
+        <a href="index.html#products">Order now</a>
+      </div>
+
+      <div class="blog-post">
+  <h3>Dry Red Chillies – Spicy & Aromatic</h3>
+  <p>We export top-quality dry red chillies like Guntur and Byadgi, known for their color, pungency, and shelf life. Used worldwide in spice blends.</p>
+  <a href="index.html#products">Order now</a>
+</div>
+
+<div class="blog-post">
+  <h3>Turmeric – Golden Spice of India</h3>
+  <p>Our turmeric fingers and powder are sourced from trusted farmers. Rich in curcumin, perfect for medicinal and culinary use.</p>
+  <a href="index.html#products">Order now</a>
+</div>
+
+<div class="blog-post">
+  <h3>Cardamom – Queen of Spices</h3>
+  <p>We supply bold green cardamom pods with strong aroma and oil content, widely used in sweets, tea, and Ayurvedic products.</p>
+  <a href="index.html#products">Order now</a>
+</div>
+
+<div class="blog-post">
+  <h3>Groundnuts (Peanuts) – High Protein Export</h3>
+  <p>Indian groundnuts are a staple export crop used for oil, snacks, and protein supplements. We offer raw and blanched varieties.</p>
+  <a href="index.html#products">Order now</a>
+</div>
+
+<div class="blog-post">
+  <h3>Cashew Nuts – Premium Indian Variety</h3>
+  <p>We export W320 and W240 grade cashew nuts known for size, taste, and low moisture. Hygienically packed for freshness.</p>
+   <a href="index.html#products">Order now</a>
+</div>
+
+<div class="blog-post">
+  <h3>Indian Rice – Basmati & Non-Basmati</h3>
+  <p>From fragrant Basmati to nutrient-rich Sona Masoori, our rice varieties meet global standards and are suitable for all cuisines.</p>
+  <a href="index.html#products">Order now</a>
+</div>
+
+<div class="blog-post">
+  <h3>Ladies Finger (Okra) – Fresh & Green</h3>
+  <p>We export farm-fresh okra packed with vitamins and crispness, sorted and packed for export to retain freshness during transit.</p>
+  <a href="index.html#products">Order now</a>
+</div>
+
+<div class="blog-post">
+  <h3>Drumstick (Moringa) – Superfood Export</h3>
+  <p>Moringa pods and leaves are highly demanded for their health benefits. We export fresh and powder forms globally.</p>
+  <a href="index.html#products">Order now</a>
+</div>
+
+<div class="blog-post">
+  <h3>Green Chilli – Fresh Indian Spice</h3>
+  <p>We export spicy and juicy green chillies that meet international freshness and size standards, with strong shelf life.</p>
+  <a href="index.html#products">Order now</a>
+</div>
+
+<div class="blog-post">
+  <h3>Tomatoes – Fresh from Indian Farms</h3>
+  <p>Our export-quality tomatoes are juicy, firm, and pesticide-free, ideal for fresh markets and processing industries worldwide.</p>
+  <a href="index.html#products">Order now</a>
+</div>
+
+    </div>
   </div>
-</header>
+</section>
 
 
-  <section class="about">
-    <h2>About Us</h2>
-    <p><strong>Vetrivel Internationals</strong> is a trusted name in the export industry, specializing in high-quality palm tree sweet products. We take pride in offering a variety of natural and unrefined sweeteners sourced from the best suppliers, ensuring quality and authenticity in every shipment.</p>
-    
-    <h3>Who We Are</h3>
-    <p>We are a dedicated export company with a strong focus on delivering premium palm-based sweet products to global markets. While we are not manufacturers, we work closely with reliable and certified producers to bring you the finest products available.</p>
-    
-    <h3>What We Offer</h3>
-    <p>Our primary expertise lies in exporting palm tree sweet products such as Jaggery Powder, Palm Sugar Candy, Palm Jaggery, and Dry Ginger Palm Candy. We also cater to custom export needs, ensuring timely delivery through a strong and efficient supply chain.</p>
-    
-    <h3>Why Choose Us?</h3>
-    <ul>
-      <li>Reliable sourcing from trusted manufacturers</li>
-      <li>Premium quality with strict quality control</li>
-      <li>Customized exports based on customer needs</li>
-      <li>Commitment to global standards and satisfaction</li>
-    </ul>
-    
-    <h3>Our Mission</h3>
-    <p>Our mission is to bridge the gap between high-quality traditional sweet products and global markets, ensuring authenticity, sustainability, and customer satisfaction.</p>
-  </section>
+    <footer>
+        <p>© 2025 VETRIVEL INTERNATIONALS. All rights reserved.</p>
+    </footer>
 
-  <footer>
-    <p>© 2025 VETRIVEL INTERNATIONALS. All rights reserved.</p>
-  </footer>
+    <!-- Latest JavaScript code for menu toggle and sticky header -->
+    <script>
+        // Wrap all main JavaScript logic inside DOMContentLoaded to ensure the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Function to toggle the mobile menu visibility
+            // Made globally accessible for onclick attribute in HTML
+            window.toggleMenu = function() {
+                // CRITICAL FIX: Target the .nav-links div, not the <ul> inside it.
+                // The 'show' class is applied to the .nav-links div in CSS.
+                const navLinksContainer = document.querySelector(".main-nav .nav-links");
+                if (navLinksContainer) { // Ensure the element exists before trying to toggle
+                    navLinksContainer.classList.toggle("show");
+                }
+            };
+
+            // Optional: Close mobile menu when a navigation link is clicked
+            // This improves user experience for single-page navigation or when navigating between pages
+            document.querySelectorAll('.main-nav .nav-links ul li a').forEach(item => {
+                item.addEventListener('click', () => {
+                    const navLinksContainer = document.querySelector(".main-nav .nav-links");
+                    // If the menu is currently open, close it
+                    if (navLinksContainer && navLinksContainer.classList.contains('show')) {
+                        navLinksContainer.classList.remove('show');
+                    }
+                });
+            });
+
+            // Product category filter logic (only relevant for index.html, but included for completeness)
+            const categorySelect = document.getElementById("category-select"); // Corrected ID from categorySelect
+            const productCategories = document.querySelectorAll(".product-category");
+
+            if (categorySelect) {
+                categorySelect.addEventListener("change", function () {
+                    const selectedCategory = this.value;
+
+                    productCategories.forEach(category => {
+                        // Check if the selected category is "all" or matches the data-category attribute
+                        const isMatch = selectedCategory === "all" || category.id === selectedCategory + "-products"; // Assuming category IDs like "coconut-products"
+
+                        category.style.display = isMatch ? "block" : "none";
+                    });
+                });
+                // Trigger change event on load to apply initial filter (e.g., show all)
+                categorySelect.dispatchEvent(new Event("change"));
+            }
+
+            // Sticky navigation logic - now applies to .site-header
+            window.addEventListener('scroll', function() {
+                const siteHeader = document.querySelector('.site-header');
+                if (siteHeader) { // Ensure the header element exists
+                    // Determine when to make the header sticky.
+                    // 50px is a common value, meaning it becomes sticky after scrolling 50px down.
+                    if (window.scrollY > 50) {
+                        siteHeader.classList.add('sticky');
+                    } else {
+                        siteHeader.classList.remove('sticky');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

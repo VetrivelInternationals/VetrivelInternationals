@@ -1,165 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - VETRIVEL INTERNATIONALS</title>
-  <link rel="icon" href="favicon.ico" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-    }
-
-    header {
-      background-color: #005000;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-container {
-      background-color: white;
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .contact-container h2 {
-      color: #006400;
-      margin-bottom: 30px;
-    }
-
-    .contact-container p {
-      margin: 10px 0;
-      font-size: 16px;
-    }
-
-    .contact-container p strong {
-      color: #000;
-    }
-
-    .order-button {
-      background-color: #b60000;
-      color: white;
-      padding: 12px 25px;
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 20px;
-      display: inline-block;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
-    }
-
-    .order-button:hover {
-      background-color: #006400;
-    }
-
-    .social-links {
-      margin-top: 25px;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      color: #333;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    .social-links a:hover {
-      color: #ff6600;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Us - VETRIVEL INTERNATIONALS</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles.css"/>
+    <!-- Removed inline <style> block as styles should be in styles.css for consistency -->
 </head>
 <body>
 
-  <header style="background-color: #005400; padding: 10px 40px;">
-  <div style="display: flex; align-items: center; justify-content: space-between;">
-    
-    <!-- Logo and Branding (aligned left) -->
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="Logo.New.jpg" alt="Vetrivel Logo" style="height: 60px; border-radius: 10px;" />
-      <h1 style="margin: 0; font-size: 26px; font-weight: bold; color: white;">VETRIVEL INTERNATIONALS</h1>
+    <header class="site-header">
+        <div class="yellow-section">
+            <div class="scrolling-content-wrapper">
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+                <span>We Serve Quality Beyond Boundaries</span>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <!-- HAMBURGER ICON: Moved here to be a direct child of main-nav -->
+            <!-- This placement ensures flexbox 'order' and 'justify-content' work correctly -->
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+            <div class="left-icons">
+                <!-- Add any left-aligned icons here if needed, e.g., social media icons -->
+            </div>
+
+            <div class="center-logo">
+                <a href="index.html">
+                    <img src="Logo.New.jpg" alt="Vetrivel Internationals Logo" />
+                </a>
+            </div>
+
+            <!-- NAVIGATION LINKS: This div contains the actual menu items -->
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <p><strong>📍 Address:</strong> 75/1, Vinayagar Kovil Street, Arumuganeri - 628202, Thoothukudi, Tamil Nadu</p>
+        <p><strong>📧 Email:</strong> <a href="mailto:vetrivelinternationals@gmail.com">vetrivelinternationals@gmail.com</a></p>
+        <p><strong>🗓 Business Hours:</strong> Mon–Fri, 9:00 AM – 6:00 PM</p>
+
+        <a href="index.html" class="order-button">View Products</a>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/vetrivelinternationals" target="_blank">Instagram</a>
+            <a href="https://x.com/VetrivelIn82446" target="_blank">Twitter</a>
+            <a href="https://youtube.com/@vetrivelinternationals" target="_blank">YouTube</a>
+            <a href="https://www.linkedin.com/in/vetrivel-internationals" target="_blank">LinkedIn</a>
+        </div>
     </div>
 
-    <!-- Navigation Menu (aligned right) -->
-    <nav>
-      <ul style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0;">
-        <li><a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Home</a></li>
-        <li><a href="index.html#products" style="color: white; text-decoration: none; font-weight: bold;">Products</a></li>
-        <li><a href="about.html" style="color: white; text-decoration: none; font-weight: bold;">About Us</a></li>
-        <li><a href="contact.html" style="color: white; text-decoration: none; font-weight: bold;">Contact</a></li>
-      </ul>
-    </nav>
+    <footer>
+        <p>© 2025 VETRIVEL INTERNATIONALS. All rights reserved.</p>
+    </footer>
 
-  </div>
-</header>
+    <!-- Latest JavaScript code for menu toggle and sticky header -->
+    <script>
+        // Wrap all main JavaScript logic inside DOMContentLoaded to ensure the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", function () {
 
+            // Function to toggle the mobile menu visibility
+            // Made globally accessible for onclick attribute in HTML
+            window.toggleMenu = function() {
+                // CRITICAL FIX: Target the .nav-links div, not the <ul> inside it.
+                // The 'show' class is applied to the .nav-links div in CSS.
+                const navLinksContainer = document.querySelector(".main-nav .nav-links");
+                if (navLinksContainer) { // Ensure the element exists before trying to toggle
+                    navLinksContainer.classList.toggle("show");
+                }
+            };
 
+            // Optional: Close mobile menu when a navigation link is clicked
+            // This improves user experience for single-page navigation or when navigating between pages
+            document.querySelectorAll('.main-nav .nav-links ul li a').forEach(item => {
+                item.addEventListener('click', () => {
+                    const navLinksContainer = document.querySelector(".main-nav .nav-links");
+                    // If the menu is currently open, close it
+                    if (navLinksContainer && navLinksContainer.classList.contains('show')) {
+                        navLinksContainer.classList.remove('show');
+                    }
+                });
+            });
 
-  <div class="contact-container">
-    <h2>Contact Us</h2>
-    <p><strong>📍 Address:</strong> 75/1, Vinayagar Kovil Street, Arumuganeri - 628202, Thoothukudi, Tamil Nadu</p>
-    <p><strong>📧 Email:</strong> <a href="mailto:vetrivelinternationals@gmail.com">vetrivelinternationals@gmail.com</a></p>
-    <p><strong>🗓 Business Hours:</strong> Mon–Fri, 9:00 AM – 6:00 PM</p>
+            // Product category filter logic (only relevant for index.html, but included for completeness)
+            const categorySelect = document.getElementById("category-select"); // Corrected ID from categorySelect
+            const productCategories = document.querySelectorAll(".product-category");
 
-    <a href="index.html" class="order-button">View Products</a>
+            if (categorySelect) {
+                categorySelect.addEventListener("change", function () {
+                    const selectedCategory = this.value;
 
-    <div class="social-links">
-      <a href="https://www.instagram.com/vetrivelinternationals" target="_blank">Instagram</a>
-      <a href="https://x.com/VetrivelIn82446" target="_blank">Twitter</a>
-      <a href="https://youtube.com/@vetrivelinternationals" target="_blank">YouTube</a>
-      <a href="https://www.linkedin.com/in/vetrivel-internationals" target="_blank">LinkedIn</a>
-    </div>
-  </div>
+                    productCategories.forEach(category => {
+                        // Check if the selected category is "all" or matches the data-category attribute
+                        const isMatch = selectedCategory === "all" || category.id === selectedCategory + "-products"; // Assuming category IDs like "coconut-products"
 
-  <footer>
-    © 2025 VETRIVEL INTERNATIONALS. All rights reserved.
-  </footer>
+                        category.style.display = isMatch ? "block" : "none";
+                    });
+                });
+                // Trigger change event on load to apply initial filter (e.g., show all)
+                categorySelect.dispatchEvent(new Event("change"));
+            }
 
+            // Sticky navigation logic - now applies to .site-header
+            window.addEventListener('scroll', function() {
+                const siteHeader = document.querySelector('.site-header');
+                if (siteHeader) { // Ensure the header element exists
+                    // Determine when to make the header sticky.
+                    // 50px is a common value, meaning it becomes sticky after scrolling 50px down.
+                    if (window.scrollY > 50) {
+                        siteHeader.classList.add('sticky');
+                    } else {
+                        siteHeader.classList.remove('sticky');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

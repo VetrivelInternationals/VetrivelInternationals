@@ -1,269 +1,644 @@
-html {
-  scroll-behavior: smooth;
+/* General Body and HTML Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
-.product-category {
+
+.blog-post {
   background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-radius: 16px;
-  padding: 30px 20px;
-  margin: 40px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
 }
 
-
-
-/* ===== NAVIGATION ===== */
-nav {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 40px;
-  padding-top: 30px;
-  position: absolute; /* Overlays the hero image */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
+.blog-post h3 {
+  margin-top: 0;
+  color: #1a6f2b;
+  font-size: 20px;
 }
-.whatsapp-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #076b00;
-  color: white;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 40px;
-  font-size: 16px;
-  font-weight: bold;
+
+.blog-post p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.blog-post a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0066cc;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  animation: pulse 2s infinite;
+  font-weight: 600;
 }
 
-.whatsapp-button:hover {
-  background-color: #0a8901;
-  transform: scale(1.05);
+.blog-post:hover {
+  transform: translateY(-6px);
 }
 
+
+/* --- Site-wide Header Styling --- */
+.site-header {
+    width: 100%;
+    position: absolute; /* Changed to absolute to float over content */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is on top of other content */
+    transition: all 0.3s ease; /* Smooth transition for sticky effect */
+    background-color: rgba(0, 0, 0, 0.2); /* Default transparent background */
+}
+
+.yellow-section {
+    background-color: #f7d000; /* Original yellow from previous versions */
+    color: #333; /* Original color */
+    padding: 5px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.scrolling-content-wrapper {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 90s linear infinite; /* Adjusted animation speed back to 30s */
+}
+
+.scrolling-content-wrapper span {
+    margin-right: 50px;
+    font-weight: bold; /* Re-added font-weight: bold */
+    font-size: 0.95em;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Main Navigation Bar - PC View (Default) */
+.main-nav {
+    display: flex;
+    justify-content: center; /* Center the main content (logo) horizontally by default */
+    align-items: center; /* Vertically centers items in the flex container */
+    padding: 10px 40px;
+    background-color: transparent; /* Remains transparent over hero */
+    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Important for absolute positioning of nav-links on desktop when not sticky */
+}
+
+.main-nav .left-icons {
+    /* No specific styles needed unless there are actual icons here */
+}
+
+.main-nav .center-logo {
+    display: flex; /* Kept display: flex */
+    align-items: center; /* Vertically centers content within logo div */
+    justify-content: center; /* Horizontally centers content within logo div */
+}
+
+.main-nav .center-logo img {
+    height: 65px;
+    border-radius: 10px;
+    transition: height 0.3s ease, filter 0.3s ease;
+}
+
+/* Navigation Links (Desktop) - POSITIONED ABSOLUTELY by default on top of hero */
+.main-nav .nav-links {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: block; /* Ensure it's block for desktop */
+    opacity: 1; /* Make sure it's not transparent */
+    visibility: visible; /* Make sure it's visible */
+    pointer-events: auto; /* Enable clicks */
+    transition: none; /* No transition for desktop state change */
+}
+
+.main-nav .nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal display for desktop navigation items */
+    gap: 30px;
+}
+
+.main-nav .nav-links ul li a {
+    color: white; /* Default link color on transparent header */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-links ul li a:hover {
+    color: #f7d000;
+}
+
+/* Hamburger Icon (Hidden on Desktop by default) */
+.hamburger {
+    display: none; /* Explicitly hidden on desktop by default */
+    font-size: 30px; /* Base size */
+    cursor: pointer;
+    color: white; /* Default color on transparent header */
+    line-height: 80px; /* Match logo height for alignment on larger screens (if it were shown) */
+    z-index: 1001; /* Ensure it's always on top */
+}
+
+
+/* --- Sticky Header State (PC View) --- */
+.site-header.sticky {
+    position: fixed; /* Must be fixed when sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff !important; /* White background when sticky */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding-top: 0;
+}
+
+.site-header.sticky .main-nav {
+    padding: 5px 40px;
+    justify-content: space-between; /* Distribute items to left and right */
+}
+
+.site-header.sticky .main-nav .center-logo {
+    order: 1; /* Logo first (left) */
+    /* No specific justify-content or margin needed here as space-between on parent handles it */
+}
+
+.site-header.sticky .main-nav .center-logo img {
+    height: 50px;
+}
+
+/* Navigation Links (Desktop) when sticky - now flows with flexbox */
+.site-header.sticky .main-nav .nav-links {
+    position: static; /* Let it flow normally within the flex container */
+    transform: translateY(0); /* Remove any leftover transform */
+    right: auto; /* Remove absolute positioning */
+    top: auto; /* Remove absolute positioning */
+    order: 2; /* Nav links second (right) */
+    margin-left: auto; /* Pushes the nav-links to the right if there's space */
+}
+
+.site-header.sticky .main-nav .nav-links ul li a {
+    color: black !important; /* Black links when sticky */
+}
+
+.site-header.sticky .main-nav .nav-links ul li a:hover {
+    color: #005000;
+}
+
+/* Hamburger Icon when sticky (on mobile) */
+.site-header.sticky .hamburger {
+    color: black; /* Black hamburger when sticky */
+    line-height: 50px; /* Match sticky logo height */
+    order: 99; /* Hamburger last (right) on mobile */
+    margin-left: auto; /* Pushes hamburger to the right */
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    margin-top: -120px; /* Negative margin to pull it up behind the header */
+    padding-top: 120px; /* Add padding to hero content so it doesn't go under header */
+    background: url('bg-hero.jpeg') no-repeat center center/cover; /* Corrected image name */
+    color: white;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 85vh; /* Corrected 'vh' unit */
+    display: flex;
+    flex-direction: column; /* Changed to column to stack elements */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Removed .hero-content styles as the div is being removed from HTML */
+
+.hero h1 {
+    font-size: 2.5em; /* Reduced from 3.5em */
+    margin-top: 20px;
+    margin-bottom: 10px; /* Added margin for spacing below heading */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero .tagline {
+    font-size: 1.5em; /* Added a default font-size for tagline */
+    margin-bottom: 30px; /* Added margin for spacing below tagline */
+    font-style: italic; /* Added italic for tagline */
+}
+
+.hero-buttons .hero-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.hero-buttons .hero-btn:hover {
+    background-color: #218838;
+}
+
+/* --- Product Filter Section --- */
 .product-filter {
-  text-align: center;
-  margin: 30px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 50px; /* Adjust if needed based on the new header height */
 }
 
 .product-filter label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 10px;
+    font-weight: bold;
+    margin-right: 10px;
 }
 
-#categorySelect {
-  font-size: 16px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background: #f8f8f8;
-  cursor: pointer;
+.product-filter select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
 }
 
-
-
-
-
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-  70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-
-nav ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  text-align: center;
-  
-  padding: 60px 20px;
-  background: url('bg-hero.png') no-repeat center center;
-  background-size: cover;
-  color: white;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;        /* center horizontally */
-  justify-content: center;    /* center vertically */
-  max-width: 500px;
-  padding-left: 400px;
-  text-align: center;
-}
-.hero-title,
-.hero-tagline {
-  opacity: 0;
-  transform: translateY(-30px);
-  animation: fadeInTop 1.5s ease-out forwards;
-}
-
-.hero-tagline {
-  animation-delay: 0.3s;
-}
-
-@keyframes fadeInTop {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-.tagline {
-  font-size: 16px;
-  margin-top: 10px;
-  color: #f0f0f0;
-}
-
-.hero-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.hero-btn {
-  padding: 12px 25px;
-  background-color: #098d00;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.hero-btn:hover {
-  background-color: #076b00;
-}
-
-/* ===== PRODUCTS SECTION ===== */
+/* --- Products Section --- */
 .products-section {
-  padding: 50px 20px;
-  text-align: center;
-  background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .products-section h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #005000;
+    margin-bottom: 40px;
+}
+
+.product-category {
+    margin-bottom: 50px;
+}
+
+.product-category h3 {
+    font-size: 2em;
+    color: #006400;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    display: inline-block;
 }
 
 .product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product {
-  width: 300px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .product:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .product img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .product h3 {
-  margin: 15px 0 5px;
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .product p {
-  color: #666;
-  font-size: 16px;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
 }
 
-.buy-button {
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #098d00;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+.whatsapp-button {
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
-.buy-button:hover {
-  background-color: #066b00;
+.whatsapp-button:hover {
+    background-color: #1da851;
 }
 
 
-/* ===== ABOUT SECTION ===== */
-.about-section {
-  padding: 50px 20px;
-  text-align: center;
+/* --- About and Contact Page Specifics --- */
+.contact-container,
+.about-container {
+    margin-top: 120px; /* Keep this to account for fixed header on these pages */
+    margin-bottom: 40px;
+    background-color: white;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.about-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+.contact-container h2 {
+    color: #006400;
+    margin-bottom: 30px;
 }
 
-.about-section p {
-  font-size: 18px;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-  color: #444;
+.contact-container p {
+    margin: 10px 0;
+    font-size: 16px;
 }
 
-/* ===== FOOTER ===== */
+.contact-container p strong {
+    color: #000;
+}
+
+.contact-container .order-button {
+    background-color: #b60000;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.contact-container .order-button:hover {
+    background-color: #006400;
+}
+
+.contact-container .social-links {
+    margin-top: 25px;
+}
+
+.contact-container .social-links a {
+    margin: 0 10px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.contact-container .social-links a:hover {
+    color: #ff6600;
+}
+
+
+/* --- Footer --- */
 footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    font-size: 0.9em;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .main-nav {
+        justify-content: space-between; /* Ensures logo and hamburger are on ends */
+        padding: 10px 20px;
+        position: relative; /* Keep relative for mobile menu positioning */
+        display: flex;
+        align-items: center;
     }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 767px) {
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+    .main-nav .left-icons {
+        flex-grow: 1; /* Allows it to take up available space */
+        order: 1;
+    }
+
+    .main-nav .center-logo {
+        height: auto;
+        margin: 0;
+        order: 0; /* Logo in the middle by default on mobile (when not sticky) */
+        flex-shrink: 0;
+    }
+
+    .main-nav .center-logo img {
+        height: 60px;
+    }
+
+    /* Show hamburger icon on mobile */
+    .hamburger {
+        display: block; /* Make it visible on mobile */
+        color: white; /* Default color on transparent header */
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1001;
+        line-height: 60px; /* Match mobile logo height for alignment */
+        position: relative;
+        order: 1; /* Hamburger last (right) by default on mobile (when not sticky) */
+        flex-shrink: 0;
+    }
+
+    /* Hide desktop navigation links on mobile by default */
+    .main-nav .nav-links {
+        position: absolute; /* Absolute positioning to overlay content */
+        top: 100%; /* Below the header */
+        left: 0;
+        width: 100%;
+        background-color: #005000; /* Background for the mobile menu */
+        flex-direction: column; /* Stack links vertically */
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        transform: translateY(-100%); /* Start off-screen */
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        display: none; /* Crucial: Hidden by default, overridden by .show */
+    }
+
+    /* State when mobile menu is active */
+    .main-nav .nav-links.show {
+        display: flex; /* Make it visible and use flex for internal stacking */
+        transform: translateY(0); /* Slide in */
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .main-nav .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0; /* Remove gap for vertical list */
+        width: 100%;
+    }
+
+    .main-nav .nav-links ul li {
+        margin: 10px 0;
+    }
+
+    .main-nav .nav-links ul li a {
+        color: white;
+        font-size: 1.2em;
+        display: block;
+        padding: 8px 0;
+    }
+
+    /* Sticky state for mobile (adjustments for the mobile specific elements) */
+    .main-nav .nav-links.show {
+        display: flex; /* Make it visible and use flex for internal stacking */
+        transform: translateY(0); /* Slide in */
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .main-nav .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0; /* Remove gap for vertical list */
+        width: 100%;
+    }
+
+    .main-nav .nav-links ul li {
+        margin: 10px 0;
+    }
+
+    .main-nav .nav-links ul li a {
+        color: white; /* Links white on green background */
+        font-size: 1.2em;
+        display: block;
+        padding: 8px 0;
+        transition: color 0.2s ease; /* Smooth transition for hover */
+    }
+
+    .main-nav .nav-links ul li a:hover {
+        color: #f7d000; /* Links turn yellow on hover */
+    }
+
+    /* Sticky state for mobile (adjustments for the mobile specific elements) */
+    .site-header.sticky .main-nav .center-logo {
+        order: 0; /* Logo first (left) when sticky on mobile */
+        margin-right: 0; /* Reset desktop sticky margin */
+        margin-left: auto; /* Push logo to the right */
+    }
+    .site-header.sticky .hamburger {
+        color: rgb(0, 0, 0); /* Black color for hamburger */
+        line-height: 50px;
+        order: 1; /* Hamburger last (right) when sticky on mobile */
+        margin-left: 0; /* Remove margin-left: auto from previous versions */
+    }
+    .site-header.sticky .main-nav .nav-links {
+        /* When mobile menu is active and header is sticky, it should still overlay */
+        order: unset; /* Revert order set for desktop sticky */
+        margin-left: 0; /* Revert margin set for desktop sticky */
+        background-color: #005a0a; /* Green background for sticky mobile menu */
+        /* Ensure its positioning remains absolute to overlay */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+    .site-header.sticky .main-nav .nav-links ul li a {
+        color: white; /* Links remain white on dark sticky mobile menu */
+        font-size: 1.2em;
+        display: block;
+        padding: 8px 0;
+        transition: color 0.2s ease; /* Smooth transition for hover */
+    }
+    .site-header.sticky .main-nav .nav-links ul li a:hover {
+        color: #f7d000; /* Links turn yellow on hover */
+    }
+
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero .tagline {
+        font-size: 1.2em;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .hero-btn {
+        margin: 10px 0;
+        width: 80%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container,
+    .about-container {
+        margin-top: 100px;
+        padding: 20px;
+    }
+}
+
+/* Styles for screens smaller than 480px (extra small devices) */
+@media (max-width: 480px) {
+    .main-nav {
+        padding: 10px 15px;
+    }
+
+    .main-nav .center-logo img {
+        height: 50px;
+    }
+
+    .hamburger {
+        font-size: 26px;
+        line-height: 50px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero .tagline {
+        font-size: 1em;
+    }
 }
